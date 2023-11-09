@@ -16,6 +16,7 @@ export const GuessingSection = ({
         className="nes-input"
         id="pokemonName"
         name="pokemonName"
+        placeholder="Pokemon name..."
         onChange={onChangePokemonName}
         value={pokemonName}
       />

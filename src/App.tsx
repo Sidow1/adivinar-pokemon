@@ -99,16 +99,17 @@ function App() {
           }}
         />
         <AnswerSection answer={answer} name={pokemon.name} />
-
-        {guessing ? (
-          <GuessingSection
-            onChangePokemonName={onChangePokemonName}
-            pokemonName={pokemonName}
-            guessPokemon={guessPokemon}
-          />
-        ) : (
-          <PlayAgainButton playAgain={playAgain} />
-        )}
+        <div className="guessSection">
+          {guessing ? (
+            <GuessingSection
+              onChangePokemonName={onChangePokemonName}
+              pokemonName={pokemonName}
+              guessPokemon={guessPokemon}
+            />
+          ) : (
+            <PlayAgainButton playAgain={playAgain} />
+          )}
+        </div>
         <Score score={score} />
       </section>
     </div>

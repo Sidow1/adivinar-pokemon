@@ -13,3 +13,9 @@
 .score {
   margin-top: 20px;
 }
+
+.guessSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
