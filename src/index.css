@@ -10,3 +10,8 @@ main {
 img {
   image-rendering: pixelated;
 }
+
+body {
+  background-color: #35363a;
+  color: white;
+}
