@@ -6,6 +6,7 @@ import { AnswerSection } from "./components/AnswerSection.tsx";
 import { GuessingSection } from "./components/GuessingSection.tsx";
 import { PlayAgainButton } from "./components/PlayAgainButton.tsx";
 import { Score } from "./components/Score.tsx";
+import { MusicButton } from "./components/MusicButton.tsx";
 
 function App() {
   const [pokemon, setPokemon] = useState<Pokemon>({
@@ -86,33 +87,36 @@ function App() {
   }, []);
 
   return (
-    <div className="container">
-      <section>
-        <h1>Who's that Pokemon?</h1>
-        {!guessing && <p>It's {pokemon.name.toUpperCase()}!</p>}
-        <img
-          src={pokemon.image}
-          alt={pokemon.name}
-          className="pokemon-image"
-          style={{
-            filter: guessing ? "brightness(0) saturate(0%)" : "none",
-          }}
-        />
-        <AnswerSection answer={answer} name={pokemon.name} />
-        <div className="guessSection">
-          {guessing ? (
-            <GuessingSection
-              onChangePokemonName={onChangePokemonName}
-              pokemonName={pokemonName}
-              guessPokemon={guessPokemon}
-            />
-          ) : (
-            <PlayAgainButton playAgain={playAgain} />
-          )}
-        </div>
-        <Score score={score} />
-      </section>
-    </div>
+    <>
+      <div className="container">
+        <section>
+          <h1>Who's that Pokemon?</h1>
+          {!guessing && <p>It's {pokemon.name.toUpperCase()}!</p>}
+          <img
+            src={pokemon.image}
+            alt={pokemon.name}
+            className="pokemon-image"
+            style={{
+              filter: guessing ? "brightness(0) saturate(0%)" : "none",
+            }}
+          />
+          <AnswerSection answer={answer} name={pokemon.name} />
+          <div className="guessSection">
+            {guessing ? (
+              <GuessingSection
+                onChangePokemonName={onChangePokemonName}
+                pokemonName={pokemonName}
+                guessPokemon={guessPokemon}
+              />
+            ) : (
+              <PlayAgainButton playAgain={playAgain} />
+            )}
+          </div>
+          <Score score={score} />
+        </section>
+      </div>
+      <MusicButton />
+    </>
   );
 }
 
